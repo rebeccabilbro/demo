@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+        body {
+            background-color:white;
+        }
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        #header {
+            background-color:white;
+            color:black;
+            text-align:left;
+            padding:5px;
+            font-family: 'Avenir Heavy', 'Arial';
+        }
+        #nav {
+            line-height:30px;
+            background-color:white;
+            height:550px;
+            width:100px;
+            float:left;
+            padding:5px;          
+        }
+        #section {
+            background-color:white;
+            width:1000px;
+            float:center;
+            padding:4px;        
+        }
+        #section2 {
+            background-color:orange;
+            width:1000px;
+            height:250px;
+            float:center;
+            padding:4px;
+            overflow-y:scroll;
+        }
+        #section3 {
+            width:1000px;
+            height:150px;
+            float:center;
+            padding:5px;
+            overflow-y:scroll;
+        }
+
+        #parent {
+            background-color:white;
+            position:relative;
+            width:985px;
+            height:1010px;
+            padding:0;
+        }
+        #child {
+            position:absolute;
+            font-family: 'Avenir Heavy', 'Arial';
+            overflow-y:scroll;
+            border:1px solid black;
+            bottom:0;
+            right:0;    
+            width:332px;
+            color:black;
+            height:520px;
+            margin:0;
+            padding:5px;
+        }
+        p:nth-child(1) {
+            bottom:0;
+            right:0;    
+        }
+        p:nth-child(2) {
+            bottom:0;
+            right:0;    
+        }
+
+
+        #footer {
+            background-color:black;
+            color:white;
+            clear:both;
+            text-align:center;
+            padding:5px;      
+    }
+    </style>
+    <div id="header">
+        <h1>Product Data Example: Shoe Price Distribution</h1>
+    </div>
+
+        <meta charset="utf-8">
+        <title>Bokeh Shoe Applet Example</title>
+        <script src="jquery-2.1.4.js"></script>
+        <script src="{{ app_url }}"></script>
+        <script>
+            window._bokeh_onload_callbacks = [window.ShoeApp.main];
+        </script>
+    </head>
+    <body>
+    <div id="parent">
+        <div id="child">
+               
+        </div>
+        {{ app_tag|indent(8)|safe }}
+    </div>
+    </body>
+</html>
